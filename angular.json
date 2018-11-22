@@ -40,7 +40,11 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "src/assets/script/iconfont.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
