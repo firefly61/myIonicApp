@@ -1,3 +1,6 @@
-<ion-avatar (click)="openModal()" [@circle]="isOpen ? 'start' : 'end'">
+<ion-avatar (click)="openModal()">
   <img src="../../../assets/images/photo.png">
 </ion-avatar>
+
+<button (click)="toggle()">btn</button>
+<div @openClose *ngIf="isOpen"></div>

@@ -1,12 +1,24 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Home</ion-title>
+        <ion-title>
+            WELCOME
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#y-caomei"></use>
+            </svg>
+        </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    WELCOME
-    <svg class="icon" aria-hidden="true">
-        <use xlink:href="#y-caomei"></use>
-    </svg>
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide style="background-image:url(https://via.placeholder.com/200)">
+        </ion-slide>
+        <ion-slide style="background-image:url(https://via.placeholder.com/200)">
+        </ion-slide>
+        <ion-slide style="background-image:url(https://via.placeholder.com/200)">
+        </ion-slide>
+    </ion-slides>
+    <ion-content>
+
+    </ion-content>
 </ion-content>

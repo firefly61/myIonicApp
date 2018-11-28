@@ -1,22 +1,31 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalController} from '@ionic/angular';
 import {MinePage} from './mine.page';
-import {trigger, state, style, animate, transition} from '@angular/animations';
+import {trigger, state, style, animate, transition, query, stagger} from '@angular/animations';
 
 @Component({
     selector: 'app-mine',
     templateUrl: './mine.component.html',
     styleUrls: ['./mine.component.scss'],
-    animations: [trigger('circle', [
-        state('start', style({'opacity': 1})),
-        state('end', style({'opacity': 0})),
-        transition('start => end', [
-            animate('1s')
+    animations: [trigger('openClose', [
+        transition(':enter, * => 0, * => -1', []),
+        transition(':increment', [
+            query(':enter', [
+                style({opacity: 0, width: '0px'}),
+                stagger(50, [
+                    animate('300ms ease-out', style({opacity: 1, width: '*'})),
+                ]),
+            ], {optional: true})
         ]),
-        transition('end => start', [
-            animate('0.5s')
-        ])
-    ])]
+        transition(':decrement', [
+            query(':leave', [
+                stagger(50, [
+                    animate('300ms ease-out', style({opacity: 0, width: '0px'})),
+                ]),
+            ])
+        ]),
+    ])
+    ]
 })
 export class MineComponent implements OnInit {
 
